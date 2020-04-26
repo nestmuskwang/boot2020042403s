@@ -1,6 +1,7 @@
 package sort;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * @author ：wangsg
@@ -15,25 +16,22 @@ public class SelectSort {
 
     /**
      *  选择排序
-     * @param a 时间复杂度O(n2） 空间复杂度O(1)  非稳定原地排序
+     * @param array 时间复杂度O(n2） 空间复杂度O(1)  非稳定原地排序
      * @return
      */
-    public static int[] selectSort(int [] a){
-        int ln =a.length;
-        for(int i=0;i<ln-1;i++){
-            int min=i;
-            for(int j=i+1;j<ln;j++){
-                if (a[min]>a[j]) min=j;
-            }
-            int temp =a [i];
-            a[i] =a[min ];
-            a[min]=temp;
-        }
-        return a;
-
-
-
-    }
+   public  static  int[] selectSort(int[] array){
+       int ln=array.length;
+       for (int i=0;i<ln-1;i++) {
+           int min =i;
+           for(int j=i+1;j<ln;j++){
+               if(array[min]>array[j]) {min=j;}
+           }
+           int temp =array[i];
+           array[i]= array[min];
+           array[min]=temp;
+       }
+       return array;
+   }
     /**
      *
      */
