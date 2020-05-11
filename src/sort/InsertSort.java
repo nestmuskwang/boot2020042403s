@@ -12,15 +12,15 @@ public class InsertSort {
         int[] ints = insertSort(arrayList);
         System.out.println(Arrays.toString(ints));
     }
-    public  static  int[] insertSort(int [] array){
+    public  static  int[] insertSort(int [] array) {
         if(array==null&&array.length<2){
-            return  array;
+            return array;
         }
-        int ln=array.length;
-        for(int i=1;i<ln;i++){
+        int n=array.length;
+        for (int i=1;i<n;i++){
             int temp =array[i];
             int k=i-1;
-            while (k>=0&& array[k]>array[i]){
+            while (k>=0&&temp<array[k]){
                 k--;
             }
             for(int j=i;j>k+1;j--){
