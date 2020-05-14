@@ -12,23 +12,23 @@ public class InsertSort {
         int[] ints = insertSort(arrayList);
         System.out.println(Arrays.toString(ints));
     }
-    public  static  int[] insertSort(int [] array) {
-        if(array==null&&array.length<2){
-            return array;
+    public  static  int[] insertSort(int[] arr){
+        if(arr.equals(null)|| arr.length < 2){
+            return arr;
         }
-        int n=array.length;
-        for (int i=1;i<n;i++){
-            int temp =array[i];
-            int k=i-1;
-            while (k>=0&&temp<array[k]){
-                k--;
+        for(int i = 1 ;i < arr.length; i++){
+            int temp = arr [i];
+            int k = i -1 ;
+            while ( arr[k] >temp && k >=0){
+                k --;
             }
-            for(int j=i;j>k+1;j--){
-                array[j]=array[j-1];
+            for(int j = i ;j >k + 1 ;j --){
+                arr[j] = arr[j -1];
             }
-            array[k+1]=temp;
+            arr[k + 1] = temp;
         }
-        return array;
+
+        return arr;
     }
 
 }

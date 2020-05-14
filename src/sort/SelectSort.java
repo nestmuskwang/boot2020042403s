@@ -13,27 +13,17 @@ public class SelectSort {
         int[] ints = selectSort(arrayList);
         System.out.println(Arrays.toString(ints));
     }
-
-    /**
-     *  选择排序
-     * @param array 时间复杂度O(n2） 空间复杂度O(1)  非稳定原地排序
-     * @return
-     */
-   public  static  int[] selectSort(int[] array){
-       int ln=array.length;
-       for (int i=0;i<ln-1;i++) {
-           int min =i;
-           for(int j=i+1;j<ln;j++){
-               if(array[min]>array[j]) {min=j;}
+    public  static  int[] selectSort(int[] arr){
+       for(int i = 0; i < arr.length - 1;i ++){
+           int min = i;
+           for(int j = i + 1 ; j < arr.length; j++){
+               if(arr[min] >arr[j])min = j;
            }
-           int temp =array[i];
-           array[i]= array[min];
-           array[min]=temp;
+           int temp = arr[i];
+           arr[i] = arr[min];
+           arr[min] = temp;
        }
-       return array;
-   }
-    /**
-     *
-     */
+       return arr;
+    }
 
 }
