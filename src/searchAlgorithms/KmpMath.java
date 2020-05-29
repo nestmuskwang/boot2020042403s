@@ -30,6 +30,7 @@ public class KmpMath {
             for(int i = 1, j = 0 ;i <s1.length(); i ++){
                 while (j > 0 && s1.charAt(i) != s1.charAt(j)){
                     j = kmpNext[j - 1];
+
                 }
                 if(s1.charAt(i) == s1.charAt(j)){
                     j ++ ;
