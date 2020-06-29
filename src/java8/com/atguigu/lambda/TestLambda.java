@@ -111,4 +111,11 @@ public class TestLambda {
         map.put("dsa","dsds");
         ///map.forEach();
     }
+    //需求过滤工资过滤
+
+    public List<Employee> filterEmploye(){
+        List<Employee> emps = new ArrayList<>();
+        
+        return emps;
+    }
 }

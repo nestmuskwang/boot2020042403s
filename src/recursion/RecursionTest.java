@@ -1,6 +1,7 @@
 package recursion;
 
-import java.sql.SQLOutput;
+import org.junit.Test;
+
 
 /**
  * @author ：wangsg
@@ -9,7 +10,7 @@ import java.sql.SQLOutput;
 public class RecursionTest {
     public static void main(String[] args) {
         test01(10);
-        int factorial = factorial(3);
+        int factorial = factorial(4);
         System.out.println(factorial);
     }
 

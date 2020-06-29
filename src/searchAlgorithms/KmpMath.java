@@ -25,30 +25,29 @@ public class KmpMath {
         }
         //创建部分匹配表
         public  static  int[] kmpNext(String s1){
-            int[] kmpNext = new int[s1.length()];
-            kmpNext[0] = 0;
-            for(int i = 1, j = 0 ;i <s1.length(); i ++){
+            int[] kmp = new int[s1.length()];
+            kmp[0] = 0;
+            for(int i = 1 , j = 0 ;i <s1.length() ; i ++){
                 while (j > 0 && s1.charAt(i) != s1.charAt(j)){
-                    j = kmpNext[j - 1];
-
+                    j = kmp[j - 1];
                 }
                 if(s1.charAt(i) == s1.charAt(j)){
-                    j ++ ;
+                    j ++;
                 }
-                kmpNext[i] = j;
+                kmp[i] = j ;
             }
-            return kmpNext;
+            return kmp;
         }
         // Kmp  算法
         public  static  int  kmpSearch(String s1, String s2 , int[] arr){
-            for(int i = 0 , j = 0 ;i < s1.length() ;i ++){
-                while ( j > 0 && s1.charAt(i) != s2.charAt(j)){
+            for(int i = 0 , j = 0 ; i < s1.length() ; i ++){
+                while (j > 0 && s1.charAt(i) != s2.charAt(j)){
                     j = arr[j - 1];
                 }
                 if(s1.charAt(i) == s2.charAt(j)){
                     j ++;
                 }
-                if (j == s2.length()){
+                if(j == s2.length()){
                     return  i - j + 1;
                 }
             }
@@ -57,22 +56,21 @@ public class KmpMath {
 
         // 暴力匹配算法
         public  static  int violience(String s1, String s2){
-            int i = 0;
-            int j = 0;
-            while (i < s1.length() && j <s2.length()){
-                if(s1.charAt(i) == s2.charAt(j)){
-                    i ++;
-                    j ++;
-                }
-                else {
-                    i = i - j + 1;
-                    j = 0;
-                }
-            }
-            if(j == s2.length()){
-                return  i - j ;
-            }
-            return -1;
+          int i = 0 ;
+          int j = 0 ;
+          while (i < s1.length() && j <s2.length()){
+              if(s1.charAt(i) == s2.charAt(j)){
+                  i ++;
+                  j ++;
+              }else {
+                  i = i - j + 1;
+                  j = 0 ;
+              }
+          }
+          if( j == s2.length()){
+              return  i - j ;
+          }
+          return -1 ;
         }
     }
 }
